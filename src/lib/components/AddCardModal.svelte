@@ -98,7 +98,7 @@
             };
 
             // 5. 카드 추가 이벤트 발생
-            dispatch('add', { detail: cardData });
+            dispatch('add', cardData);
             
             // 6. 입력 필드 초기화
             title = '';

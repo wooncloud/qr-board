@@ -37,6 +37,8 @@
     }
 </script>
 
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
 <div
     class="relative bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer w-[280px] 
            border border-gray-200 hover:border-gray-300 transition-colors duration-200"
@@ -45,6 +47,7 @@
     on:mouseleave={() => isHovered = false}
     on:click={handleCardClick}
 >
+    <!-- svelte-ignore a11y_consider_explicit_label -->
     {#if isHovered}
         <button
             class="absolute top-2 right-2 p-2 bg-white/80 hover:bg-red-50 hover:scale-110 rounded-full 
@@ -84,18 +87,6 @@
             {:else if error}
                 <div class="text-red-500 text-sm">{error}</div>
             {/if}
-        </div>
-        
-        <div class="px-4 pb-4">
-            <a
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-blue-500 hover:text-blue-600 text-sm truncate block"
-                on:click|stopPropagation
-            >
-                {link}
-            </a>
         </div>
     </div>
 </div> 
